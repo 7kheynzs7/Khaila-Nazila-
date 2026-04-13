@@ -64,6 +64,168 @@ Tugas Khaila Nazila Shofa
 <a href="tugas1/index.html">📁 Tugas 1</a>
 </div>
 
+  <!DOCTYPE html>
+<html>
+<head>
+<title>Website Tugas Kucing</title>
+
+<style>
+body{
+margin:0;
+font-family:Segoe UI;
+background:#1f3d2b;
+color:white;
+text-align:center;
+}
+
+header{
+background:#2f5d46;
+padding:25px;
+font-size:28px;
+}
+
+.menu{
+margin-top:40px;
+}
+
+.card{
+background:#355f4a;
+width:300px;
+margin:15px auto;
+padding:20px;
+border-radius:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.card:hover{
+background:#3f7a5e;
+transform:scale(1.05);
+}
+
+.page{
+display:none;
+padding:20px;
+}
+
+img{
+width:200px;
+border-radius:15px;
+margin:10px;
+}
+
+iframe{
+border-radius:15px;
+}
+
+button{
+margin-top:20px;
+padding:10px 15px;
+border:none;
+background:#355f4a;
+color:white;
+border-radius:10px;
+cursor:pointer;
+}
+</style>
+
+<script>
+function showPage(id){
+document.querySelectorAll('.page').forEach(p=>{
+p.style.display="none";
+});
+document.getElementById(id).style.display="block";
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+🐱 Website Kumpulan Tugas
+</header>
+
+<!-- MENU UTAMA -->
+<div id="home" class="page" style="display:block">
+
+<h2>Menu Tugas</h2>
+
+<div class="card" onclick="showPage('tugas1')">
+📁 Tugas 1
+</div>
+
+</div>
+
+
+<!-- MENU TUGAS 1 -->
+<div id="tugas1" class="page">
+
+<h2>🐾 Menu Tugas 1</h2>
+
+<div class="card" onclick="showPage('biodata')">
+👤 Biodata
+</div>
+
+<div class="card" onclick="showPage('foto')">
+🖼️ Galeri Foto
+</div>
+
+<div class="card" onclick="showPage('video')">
+🎥 Galeri Video
+</div>
+
+<button onclick="showPage('home')">⬅ Kembali</button>
+
+</div>
+
+
+<!-- BIODATA -->
+<div id="biodata" class="page">
+
+<h2>👤 Biodata</h2>
+
+<p>Nama : Khaila Nazila</p>
+<p>NIM : 12345678</p>
+<p>Hobi : Pecinta Kucing 🐱</p>
+
+<button onclick="showPage('tugas1')">⬅ Kembali</button>
+
+</div>
+
+
+<!-- GALERI FOTO -->
+<div id="foto" class="page">
+
+<h2>🖼️ Galeri Foto Kucing</h2>
+
+<img src="https://placekitten.com/300/300">
+<img src="https://placekitten.com/301/300">
+<img src="https://placekitten.com/302/300">
+
+<br>
+<button onclick="showPage('tugas1')">⬅ Kembali</button>
+
+</div>
+
+
+<!-- GALERI VIDEO -->
+<div id="video" class="page">
+
+<h2>🎥 Galeri Video Kucing</h2>
+
+<iframe width="350" height="200"
+src="https://www.youtube.com/embed/J---aiyznGQ">
+</iframe>
+
+<br>
+<button onclick="showPage('tugas1')">⬅ Kembali</button>
+
+</div>
+
+</body>
+</html>
+
 <div class="card">
 <a href="tugas2/index.html">📁 Tugas 2</a>
 </div>
