@@ -225,6 +225,182 @@ src="WhatsApp Video 2026-04-05 at 22.22.12.mp4">
   <style>
 body{
 
+<!DOCTYPE html>
+<html>
+<head>
+<title>Website Tugas</title>
+
+<style>
+body{
+margin:0;
+font-family:Segoe UI;
+background:#1f3d2b;
+color:white;
+text-align:center;
+}
+
+header{
+background:#2f5d46;
+padding:25px;
+font-size:28px;
+}
+
+.card{
+background:#355f4a;
+width:300px;
+margin:15px auto;
+padding:20px;
+border-radius:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.card:hover{
+background:#3f7a5e;
+transform:scale(1.05);
+}
+
+.page{
+display:none;
+padding:20px;
+}
+
+button{
+margin-top:20px;
+padding:10px 15px;
+border:none;
+background:#355f4a;
+color:white;
+border-radius:10px;
+cursor:pointer;
+}
+
+table{
+width:90%;
+margin:auto;
+border-collapse:collapse;
+background:#355f4a;
+}
+
+th,td{
+border:1px solid white;
+padding:10px;
+}
+
+iframe{
+border-radius:15px;
+}
+
+footer{
+margin-top:50px;
+background:#2f5d46;
+padding:15px;
+}
+</style>
+
+<script>
+function showPage(id){
+document.querySelectorAll('.page').forEach(p=>{
+p.style.display="none";
+});
+document.getElementById(id).style.display="block";
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+Website Kumpulan Tugas Khaila Nazila 🐱
+</header>
+
+<!-- ================= HOME ================= -->
+<div id="home" class="page" style="display:block">
+
+<h2>Menu Tugas</h2>
+
+<div class="card" onclick="showPage('tugas1')">📁 Tugas 1</div>
+<div class="card" onclick="showPage('tugas2')">📁 Tugas 2</div>
+<div class="card" onclick="showPage('tugas3')">📁 Tugas 3</div>
+
+</div>
+
+<!-- ================= TUGAS 3 MENU ================= -->
+<div id="tugas3" class="page">
+
+<h2>Tugas 3</h2>
+
+<div class="card" onclick="showPage('googleform')">
+📄 Google Formulir
+</div>
+
+<div class="card" onclick="showPage('sajiandata')">
+📊 Sajian Data
+</div>
+
+<button onclick="showPage('home')">⬅ Kembali</button>
+
+</div>
+
+<!-- ================= GOOGLE FORM ================= -->
+<div id="googleform" class="page">
+
+<h2>Google Formulir</h2>
+
+<p>Silakan isi formulir berikut:</p>
+
+<!-- https://forms.gle/kRF7TE1PERqTq6ft6 -->
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfDUMMYFORM/viewform?embedded=true"
+width="640" height="700">
+</iframe>
+
+<br>
+<button onclick="showPage('tugas3')">⬅ Kembali</button>
+
+</div>
+
+<!-- ================= SAJIAN DATA ================= -->
+<div id="sajiandata" class="page">
+
+<h2>Sajian Data Responden</h2>
+
+<table>
+<tr>
+<th>Nama</th>
+<th>Tanggal</th>
+<th>Bank</th>
+<th>Jenis Transaksi</th>
+</tr>
+
+<tr>
+<td>Khaila Nazila</td>
+<td>01-01-2026</td>
+<td>BCA</td>
+<td>Kredit 3.000.000</td>
+</tr>
+
+<tr>
+<td>Khaila Nazila</td>
+<td>02-01-2026</td>
+<td>Mandiri</td>
+<td>Debit 150.000</td>
+</tr>
+
+</table>
+
+<br>
+<button onclick="showPage('tugas3')">⬅ Kembali</button>
+
+</div>
+
+<footer>
+© 2026 Khaila Nazila
+</footer>
+
+</body>
+</html>
+  
 <footer>
 © 2026 Khaila Nazila
 </footer>
