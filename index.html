@@ -306,4 +306,58 @@ document.getElementById(id).style.display="block";
 </head>
 
 </div>
+<div class="card" onclick="showPage('tugas3')">
+📁 Tugas 3
+</div>
 
+</div>
+
+<!-- ================= MENU TUGAS 3 ================= -->
+<div id="tugas3" class="page">
+
+<h2>Tugas 3</h2>
+
+<div class="card" onclick="showPage('formulir')">
+📄 Google Formulir
+</div>
+
+<div class="card" onclick="showPage('data')">
+📊 Sajian Data
+</div>
+
+<button onclick="showPage('home')">⬅ Kembali</button>
+
+</div>
+
+<!-- https://forms.gle/DG4KzrnBNrKVtS2q6 -->
+<div id="formulir" class="page">
+
+<h2>Formulir Pengumpulan Data</h2>
+
+<iframe
+src="https://docs.google.com/forms/d/e/1FAIpQLSc/viewform?embedded=true">
+</iframe>
+
+<button onclick="showPage('tugas3')">⬅ Kembali</button>
+
+</div>
+
+<!-- ================= SAJIAN DATA ================= -->
+<div id="data" class="page">
+
+<h2>Sajian Data (Looker Studio)</h2>
+
+<iframe
+src="https://lookerstudio.google.com/embed/reporting/lFeQWS64uEc">
+</iframe>
+
+<button onclick="showPage('tugas3')">⬅ Kembali</button>
+
+</div>
+
+<footer>
+© 2026 Khaila Nazila
+</footer>
+
+</body>
+</html>
