@@ -3,10 +3,10 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>Website Tugas Khaila</title>
-  
+
 <style>
 
 /* ================= THEME ================= */
@@ -14,29 +14,38 @@
 body{
 margin:0;
 font-family:Segoe UI;
-background:#121212;
-color:white;
+background:#ece7df;
+color:#3b2f2f;
 text-align:center;
+overflow-x:hidden;
 }
 
-/* Paw Background */
+/* PAW BACKGROUND FULL */
 body::before{
-content:"🐾 🐾 🐾 🐾";
+content:"🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾";
 position:fixed;
-opacity:0.05;
-font-size:120px;
-top:20%;
-left:10%;
+top:0;
+left:0;
+width:100%;
+height:100%;
+font-size:80px;
+opacity:0.08;
 pointer-events:none;
+animation:pawMove 40s linear infinite;
 }
 
-/* ================= LOADING (ONLY ONCE) ================= */
+@keyframes pawMove{
+0%{transform:translateY(0);}
+100%{transform:translateY(-400px);}
+}
+
+/* ================= LOADING ================= */
 
 #loading{
 position:fixed;
 width:100%;
 height:100%;
-background:#121212;
+background:#ece7df;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -48,8 +57,8 @@ z-index:999;
 width:60px;
 height:60px;
 border-radius:50%;
-border:6px solid white;
-border-top:6px solid #c7a17a;
+border:6px solid #c7a17a;
+border-top:6px solid white;
 animation:spin 1s linear infinite;
 }
 
@@ -61,39 +70,50 @@ animation:spin 1s linear infinite;
 
 #profile{
 display:none;
-padding-top:80px;
+padding-top:90px;
 }
 
 .profile-img{
-width:140px;
-height:140px;
+width:150px;
+height:150px;
 border-radius:50%;
 object-fit:cover;
-border:4px solid #c7a17a;
+border:6px solid #c7a17a;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
 }
 
 .name{
 font-size:26px;
 margin-top:15px;
+font-weight:bold;
 }
 
-.start-btn{
-margin-top:25px;
-padding:15px 35px;
-font-size:18px;
-border:none;
-border-radius:30px;
+/* tulisan klik kecil */
+.start-text{
+margin-top:10px;
+font-size:14px;
+color:white;
 background:#c7a17a;
+display:inline-block;
+padding:6px 18px;
+border-radius:20px;
 cursor:pointer;
+animation:blink 1.5s infinite;
+}
+
+@keyframes blink{
+0%,100%{opacity:1;}
+50%{opacity:.4;}
 }
 
 /* ================= NAVBAR ================= */
 
 header{
-background:#1c1c1c;
+background:#c7a17a;
+color:white;
 padding:18px;
 font-size:22px;
-box-shadow:0 2px 10px black;
+box-shadow:0 3px 10px rgba(0,0,0,.2);
 }
 
 /* ================= PAGE ================= */
@@ -101,37 +121,38 @@ box-shadow:0 2px 10px black;
 .page{
 display:none;
 padding:20px;
-animation:fade .4s ease;
+animation:fade .5s ease;
 }
 
 @keyframes fade{
-from{opacity:0;}
+from{opacity:0;transform:translateY(10px);}
 to{opacity:1;}
 }
 
 .card{
-background:#2a2a2a;
+background:#fffaf4;
 margin:15px auto;
 padding:20px;
 width:90%;
 max-width:320px;
 border-radius:15px;
 cursor:pointer;
-border:1px solid #c7a17a;
+border:2px solid #c7a17a;
 transition:.3s;
 }
 
 .card:hover{
 transform:scale(1.05);
-background:#3b2f2f;
+background:#f3e3d1;
 }
 
 button{
 margin-top:20px;
-padding:10px 20px;
+padding:10px 15px;
 border:none;
-border-radius:20px;
 background:#c7a17a;
+color:white;
+border-radius:10px;
 cursor:pointer;
 }
 
@@ -148,9 +169,16 @@ border:none;
 border-radius:12px;
 }
 
+/* MOBILE */
+@media(max-width:600px){
+header{font-size:18px;}
+.profile-img{width:120px;height:120px;}
+}
+
 footer{
-margin-top:40px;
-background:#1c1c1c;
+margin-top:50px;
+background:#c7a17a;
+color:white;
 padding:15px;
 }
 
@@ -158,32 +186,36 @@ padding:15px;
 
 <script>
 
-/* ================= LOADING ONLY FIRST OPEN ================= */
+/* ================= LOADING ONLY ONCE ================= */
 
 window.onload=function(){
+
+if(localStorage.getItem("visited")){
+loading.style.display="none";
+profile.style.display="block";
+}else{
+
 setTimeout(()=>{
-document.getElementById("loading").style.display="none";
-document.getElementById("profile").style.display="block";
+loading.style.display="none";
+profile.style.display="block";
+localStorage.setItem("visited",true);
 },1500);
+
+}
 };
 
 /* START WEBSITE */
 function startSite(){
-document.getElementById("profile").style.display="none";
+profile.style.display="none";
 showPage('home');
 }
 
-/* NAVIGASI TANPA LOADING */
+/* NAVIGATION */
 function showPage(id){
 document.querySelectorAll('.page').forEach(p=>{
 p.style.display="none";
 });
 document.getElementById(id).style.display="block";
-}
-
-/* LINK TANPA LOADING */
-function openLink(url){
-window.location.href=url;
 }
 
 </script>
@@ -192,14 +224,14 @@ window.location.href=url;
 
 <body>
 
-<!-- LOADING FIRST TIME -->
+<!-- LOADING -->
 <div id="loading">
 <div class="loader"></div>
-<p>Loading...</p>
+<p>Loading Paw Website...</p>
 </div>
 
 <!-- PROFILE SCREEN -->
-<div id="pas foto simari.jpg">
+<div id="profile">
 
 <img src="profil.jpg" class="profile-img">
 
@@ -207,23 +239,29 @@ window.location.href=url;
 Khaila Nazila Shofa
 </div>
 
-<button class="start-btn" onclick="startSite()">Klik</button>
+<div class="start-text" onclick="startSite()">
+klik
+</div>
 
 </div>
 
 <header>
-
+🐾 Website Tugas Khaila
 </header>
 
 <!-- ================= HOME ================= -->
 
 <div id="home" class="page">
 
-<h2>Pilihan Tugas</h2>
+<h2>Menu Tugas</h2>
 
 <div class="card" onclick="showPage('tugas1')">📁 Tugas 1</div>
 
-<div class="card" onclick="openLink('Tugas2.html')">📁 Tugas 2</div>
+<div class="card">
+<a href="Tugas 2.html" style="text-decoration:none;color:#3b2f2f;">
+📁 Tugas 2
+</a>
+</div>
 
 <div class="card" onclick="showPage('tugas3')">📁 Tugas 3</div>
 
@@ -239,7 +277,7 @@ Khaila Nazila Shofa
 <div class="card" onclick="showPage('foto')">🖼️ Galeri Foto</div>
 <div class="card" onclick="showPage('video')">🎥 Galeri Video</div>
 
-<button onclick="showPage('home')">Kembali</button>
+<button onclick="showPage('home')">⬅ Kembali</button>
 
 </div>
 
@@ -247,39 +285,24 @@ Khaila Nazila Shofa
 <h2>Biodata</h2>
 <p>Nama : Khaila Nazila Shofa</p>
 <p>NIM : 2310715220012</p>
-<p>Program Studi : Sosial Ekonomi Perikanan</p>
+<p>Jurusan : Sosial Ekonomi Perikanan</p>
 <p>Universitas : Lambung Mangkurat</p>
-<p>Hobi : Memasak jika mood sedang baik & Travelling jikalau uang didompet sedang tebal</p>
-<button onclick="showPage('tugas1')">Kembali</button>
+<button onclick="showPage('tugas1')">⬅ Kembali</button>
 </div>
 
 <div id="foto" class="page">
 <h2>Galeri Foto</h2>
-<img src="foto rumah tampak kiri.jpg">
-<img src="foto rumah tampak depan.jpg">
-<img src="foto rumah tampak kanan.jpg">
+<img src="rumah tampak samping kiri.jpg">
+<img src="rumah tampak depan.jpg">
+<img src="rumah tampak samping kanan.jpg">
 <img src="GMaps.jpeg">
-<button onclick="showPage('tugas1')">Kembali</button>
+<button onclick="showPage('tugas1')">⬅ Kembali</button>
 </div>
 
 <div id="video" class="page">
 <h2>Galeri Video</h2>
-<video width="300" controls>
-<source src="video fix.mp4">
-</video>
-<button onclick="showPage('tugas1')">Kembali</button>
-</div>
-
-  <!-- ================= TUGAS 2 ================= -->
-
-<div id="tugas2" class="page">
-
-<h2>Tugas 2</h2>
-
-<div class="card" onclick="showPage('Tugas 2.html')"></div>
-
-  <button onclick="showPage('home')">Kembali</button>
-
+<iframe src="WhatsApp Video 2026-04-05 at 22.22.12.mp4"></iframe>
+<button onclick="showPage('tugas1')">⬅ Kembali</button>
 </div>
 
 <!-- ================= TUGAS 3 ================= -->
@@ -289,16 +312,16 @@ Khaila Nazila Shofa
 <h2>Tugas 3</h2>
 
 <div class="card"
-onclick="openLink('https://forms.gle/5KttkeRjfg2irk8j8')">
+onclick="window.open('https://forms.gle/5KttkeRjfg2irk8j8','_blank')">
 📄 Google Formulir
 </div>
 
 <div class="card"
-onclick="openLink('https://datastudio.google.com/s/lFeQWS64uEc')">
+onclick="window.open('https://datastudio.google.com/s/lFeQWS64uEc','_blank')">
 📊 Sajian Data
 </div>
 
-<button onclick="showPage('home')">Kembali</button>
+<button onclick="showPage('home')">⬅ Kembali</button>
 
 </div>
 
