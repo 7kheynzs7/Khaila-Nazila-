@@ -77,14 +77,74 @@ font-size:26px;
 margin-top:15px;
 }
 
-.start-btn{
-margin-top:25px;
-padding:15px 35px;
-font-size:18px;
-border:none;
-border-radius:30px;
-background:#c7a17a;
+<div class="click-banner" onclick="startSite()">
+
+<span class="click-text">klik</span>
+
+<span class="hand">☝️</span>
+
+</div>
+  
+  /* ================= CLICK BANNER ================= */
+
+.click-banner{
+margin-top:35px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:20px;
+padding:18px 60px;
+background:linear-gradient(135deg,#f1d4a6,#c7a17a);
+border-radius:18px;
+font-size:28px;
+font-weight:bold;
+color:#2b1d13;
 cursor:pointer;
+box-shadow:0 6px 20px rgba(0,0,0,0.5);
+position:relative;
+overflow:hidden;
+transition:.3s;
+}
+
+.click-banner:hover{
+transform:scale(1.05);
+}
+
+/* tulisan klik */
+.click-text{
+letter-spacing:4px;
+}
+
+/* tangan menunjuk */
+.hand{
+font-size:42px;
+animation:clickHand 1s infinite;
+}
+
+/* animasi tekan */
+@keyframes clickHand{
+0%{transform:translateY(0);}
+50%{transform:translateY(10px);}
+100%{transform:translateY(0);}
+}
+
+/* efek cahaya klik */
+.click-banner::after{
+content:"";
+position:absolute;
+width:0;
+height:0;
+background:rgba(255,255,255,0.5);
+border-radius:50%;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{width:0;height:0;opacity:.6;}
+100%{width:250px;height:250px;opacity:0;}
 }
 
 /* ================= NAVBAR ================= */
