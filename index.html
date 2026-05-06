@@ -30,7 +30,7 @@ left:10%;
 pointer-events:none;
 }
 
-/* ================= LOADING (ONLY ONCE) ================= */
+/* ================= LOADING ================= */
 
 #loading{
 position:fixed;
@@ -77,14 +77,36 @@ font-size:26px;
 margin-top:15px;
 }
 
-.start-btn{
-margin-top:25px;
-padding:15px 35px;
-font-size:18px;
-border:none;
-border-radius:30px;
-background:#c7a17a;
+/* ===== ANIMASI KLIK ===== */
+
+.click-area{
+margin-top:35px;
 cursor:pointer;
+display:inline-block;
+}
+
+.click-text{
+font-size:18px;
+letter-spacing:4px;
+animation:blink 1.3s infinite;
+}
+
+@keyframes blink{
+0%,100%{opacity:1;}
+50%{opacity:0.3;}
+}
+
+/* PANAH KURSOR */
+.arrow{
+font-size:30px;
+margin-top:10px;
+animation:arrowMove 1s infinite;
+}
+
+@keyframes arrowMove{
+0%{transform:translateY(0);}
+50%{transform:translateY(10px);}
+100%{transform:translateY(0);}
 }
 
 /* ================= NAVBAR ================= */
@@ -158,8 +180,7 @@ padding:15px;
 
 <script>
 
-/* ================= LOADING ONLY FIRST OPEN ================= */
-
+/* LOADING HANYA SEKALI */
 window.onload=function(){
 setTimeout(()=>{
 document.getElementById("loading").style.display="none";
@@ -167,13 +188,11 @@ document.getElementById("profile").style.display="block";
 },1500);
 };
 
-/* START WEBSITE */
 function startSite(){
 document.getElementById("profile").style.display="none";
 showPage('home');
 }
 
-/* NAVIGASI TANPA LOADING */
 function showPage(id){
 document.querySelectorAll('.page').forEach(p=>{
 p.style.display="none";
@@ -181,7 +200,6 @@ p.style.display="none";
 document.getElementById(id).style.display="block";
 }
 
-/* LINK TANPA LOADING */
 function openLink(url){
 window.location.href=url;
 }
@@ -192,32 +210,38 @@ window.location.href=url;
 
 <body>
 
-<!-- LOADING FIRST TIME -->
+<!-- LOADING -->
 <div id="loading">
 <div class="loader"></div>
-<p>Loading...</p>
+<p>Loading Paw Website...</p>
 </div>
 
 <!-- PROFILE SCREEN -->
 <div id="profile">
 
-<img src="profil.jpg" class="profile-img">
+<img src="profil.jpg" class="pas foto simari.jpg">
 
 <div class="name">
 Khaila Nazila Shofa
-2310715220012
+  2310715220012
 </div>
 
-<button class="start-btn" onclick="startSite()">Klik</button>
+<!-- ANIMASI KLIK -->
+<div class="click-area" onclick="startSite()">
+
+<div class="click-text">klik</div>
+
+<div class="arrow">➤</div>
+
+</div>
 
 </div>
 
 <header>
-🐾 Website Tugas Khaila
+Website Tugas Khaila
 </header>
 
-<!-- ================= HOME ================= -->
-
+<!-- HOME -->
 <div id="home" class="page">
 
 <h2>Menu Tugas</h2>
@@ -230,8 +254,7 @@ Khaila Nazila Shofa
 
 </div>
 
-<!-- ================= TUGAS 1 ================= -->
-
+<!-- TUGAS 1 -->
 <div id="tugas1" class="page">
 
 <h2>Tugas 1</h2>
@@ -248,14 +271,17 @@ Khaila Nazila Shofa
 <h2>Biodata</h2>
 <p>Nama : Khaila Nazila Shofa</p>
 <p>NIM : 2310715220012</p>
-<p>Jurusan : Sosial Ekonomi Perikanan</p>
+<p>Program Studi :Sosial Ekonomi Perikanan</p>
+<p>Hobi : Memasak bila mood sedang baik & Travelling jikalau isi dompet mendukung</p>
 <button onclick="showPage('tugas1')">Kembali</button>
 </div>
 
 <div id="foto" class="page">
 <h2>Galeri Foto</h2>
-<img src="foto1.jpg">
-<img src="foto2.jpg">
+<img src="rumah tampak samping kiri.jpg">
+<img src="rumah tampak depan.jpg">
+<img src="rumah tampak kanan.jpg">
+<img src="GMaps.jpeg">
 <button onclick="showPage('tugas1')">Kembali</button>
 </div>
 
@@ -267,8 +293,7 @@ Khaila Nazila Shofa
 <button onclick="showPage('tugas1')">Kembali</button>
 </div>
 
-<!-- ================= TUGAS 3 ================= -->
-
+<!-- TUGAS 3 -->
 <div id="tugas3" class="page">
 
 <h2>Tugas 3</h2>
