@@ -77,18 +77,24 @@ font-size:26px;
 margin-top:15px;
 }
 
-/* ===== ANIMASI KLIK ===== */
+/* ===== JARI MENUNJUK ===== */
 
-.click-area{
-margin-top:35px;
-cursor:pointer;
-display:inline-block;
+.finger{
+font-size:35px;
+margin-top:10px;
+animation:fingerClick 1s infinite;
 }
 
-.click-text{
-font-size:18px;
-letter-spacing:4px;
-animation:blink 1.3s infinite;
+@keyframes fingerClick{
+0%{
+transform:translateX(0);
+}
+50%{
+transform:translateX(12px);
+}
+100%{
+transform:translateX(0);
+}
 }
 
 @keyframes fingerClick{
@@ -218,7 +224,7 @@ window.location.href=url;
 </div>
 
 <!-- PROFILE SCREEN -->
-<div id="profile">
+<div id="pas foto simari.jpg">
 
 <img src="profil.jpg" class="pas foto simari.jpg">
 
