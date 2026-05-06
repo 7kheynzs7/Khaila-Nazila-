@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -8,34 +9,28 @@
 
 <style>
 
-/* =========================
-   THEME PAW CAT
-=========================*/
+/* ================= THEME ================= */
 
 body{
 margin:0;
 font-family:Segoe UI;
 background:#121212;
-color:#fff;
+color:white;
 text-align:center;
-overflow-x:hidden;
 }
 
 /* Paw Background */
 body::before{
-content:"🐾 🐾 🐾 🐾 🐾";
+content:"🐾 🐾 🐾 🐾";
 position:fixed;
 opacity:0.05;
 font-size:120px;
 top:20%;
 left:10%;
-transform:rotate(-20deg);
 pointer-events:none;
 }
 
-/* =========================
-LOADING SCREEN
-=========================*/
+/* ================= LOADING (ONLY ONCE) ================= */
 
 #loading{
 position:fixed;
@@ -53,7 +48,7 @@ z-index:999;
 width:60px;
 height:60px;
 border-radius:50%;
-border:6px solid #fff;
+border:6px solid white;
 border-top:6px solid #c7a17a;
 animation:spin 1s linear infinite;
 }
@@ -62,9 +57,7 @@ animation:spin 1s linear infinite;
 100%{transform:rotate(360deg);}
 }
 
-/* =========================
-PROFILE PAGE
-=========================*/
+/* ================= PROFILE ================= */
 
 #profile{
 display:none;
@@ -77,13 +70,11 @@ height:140px;
 border-radius:50%;
 object-fit:cover;
 border:4px solid #c7a17a;
-box-shadow:0 0 20px rgba(0,0,0,0.6);
 }
 
 .name{
 font-size:26px;
 margin-top:15px;
-color:#f5e6d3;
 }
 
 .start-btn{
@@ -93,55 +84,29 @@ font-size:18px;
 border:none;
 border-radius:30px;
 background:#c7a17a;
-color:black;
 cursor:pointer;
-transition:.3s;
 }
 
-.start-btn:hover{
-transform:scale(1.1);
-background:#f5e6d3;
-}
-
-/* Cursor Animation */
-.cursor{
-font-size:30px;
-animation:click 1s infinite;
-}
-
-@keyframes click{
-0%{transform:translateY(0);}
-50%{transform:translateY(8px);}
-100%{transform:translateY(0);}
-}
-
-/* =========================
-NAVBAR
-=========================*/
+/* ================= NAVBAR ================= */
 
 header{
 background:#1c1c1c;
 padding:18px;
 font-size:22px;
-position:sticky;
-top:0;
-z-index:10;
 box-shadow:0 2px 10px black;
 }
 
-/* =========================
-CARD MENU
-=========================*/
+/* ================= PAGE ================= */
 
 .page{
 display:none;
 padding:20px;
-animation:fade .5s ease;
+animation:fade .4s ease;
 }
 
 @keyframes fade{
-from{opacity:0;transform:translateY(20px);}
-to{opacity:1;transform:translateY(0);}
+from{opacity:0;}
+to{opacity:1;}
 }
 
 .card{
@@ -152,8 +117,8 @@ width:90%;
 max-width:320px;
 border-radius:15px;
 cursor:pointer;
-transition:.3s;
 border:1px solid #c7a17a;
+transition:.3s;
 }
 
 .card:hover{
@@ -170,13 +135,10 @@ background:#c7a17a;
 cursor:pointer;
 }
 
-/* =========================
-MEDIA RESPONSIVE
-=========================*/
-
-@media(max-width:600px){
-.name{font-size:20px;}
-.card{width:92%;}
+img{
+width:200px;
+border-radius:15px;
+margin:10px;
 }
 
 iframe{
@@ -186,23 +148,18 @@ border:none;
 border-radius:12px;
 }
 
-img{
-width:200px;
-border-radius:15px;
-margin:10px;
-}
-
 footer{
 margin-top:40px;
-padding:15px;
 background:#1c1c1c;
+padding:15px;
 }
 
 </style>
 
 <script>
 
-/* LOADING 1.5 DETIK */
+/* ================= LOADING ONLY FIRST OPEN ================= */
+
 window.onload=function(){
 setTimeout(()=>{
 document.getElementById("loading").style.display="none";
@@ -216,7 +173,7 @@ document.getElementById("profile").style.display="none";
 showPage('home');
 }
 
-/* NAVIGASI */
+/* NAVIGASI TANPA LOADING */
 function showPage(id){
 document.querySelectorAll('.page').forEach(p=>{
 p.style.display="none";
@@ -224,12 +181,9 @@ p.style.display="none";
 document.getElementById(id).style.display="block";
 }
 
-/* OPEN LINK */
+/* LINK TANPA LOADING */
 function openLink(url){
-document.getElementById("loading").style.display="flex";
-setTimeout(()=>{
 window.location.href=url;
-},1500);
 }
 
 </script>
@@ -238,10 +192,10 @@ window.location.href=url;
 
 <body>
 
-<!-- LOADING -->
+<!-- LOADING FIRST TIME -->
 <div id="loading">
 <div class="loader"></div>
-<p>Loading Paw Website...</p>
+<p>Loading...</p>
 </div>
 
 <!-- PROFILE SCREEN -->
@@ -251,13 +205,10 @@ window.location.href=url;
 
 <div class="name">
 Khaila Nazila Shofa
+2310715220012
 </div>
 
-<div class="cursor">🖱️</div>
-
-<button class="start-btn" onclick="startSite()">
-Klik
-</button>
+<button class="start-btn" onclick="startSite()">Klik</button>
 
 </div>
 
@@ -265,7 +216,7 @@ Klik
 🐾 Website Tugas Khaila
 </header>
 
-<!-- ================= MENU ================= -->
+<!-- ================= HOME ================= -->
 
 <div id="home" class="page">
 
@@ -298,7 +249,6 @@ Klik
 <p>Nama : Khaila Nazila Shofa</p>
 <p>NIM : 2310715220012</p>
 <p>Jurusan : Sosial Ekonomi Perikanan</p>
-<p>Universitas : Lambung Mangkurat</p>
 <button onclick="showPage('tugas1')">Kembali</button>
 </div>
 
