@@ -40,38 +40,6 @@ white-space:wrap;
 100%{transform:translateY(-600px);}
 }
 
-/* ================= CAT ANIMATION ================= */
-
-.cat{
-position:fixed;
-left:-60px;
-bottom:30px;
-font-size:120px;
-z-index:999;
-animation:catPeek 3s ease-in-out infinite;
-pointer-events:none;
-}
-
-/* kucing muncul setengah badan */
-@keyframes catPeek{
-0%{left:-90px;}
-50%{left:-30px;}
-100%{left:-90px;}
-}
-
-/* tangan melambai */
-.cat span{
-display:inline-block;
-animation:wave 1s infinite;
-transform-origin:70% 70%;
-}
-
-@keyframes wave{
-0%{transform:rotate(0deg);}
-50%{transform:rotate(25deg);}
-100%{transform:rotate(0deg);}
-}
-
 /* ================= LOADING ================= */
 
 #loading{
@@ -248,11 +216,6 @@ document.getElementById(id).style.display="block";
 </head>
 
 <body>
-
-<!-- 🐱 KUCING NGINTIP + LAMBAI -->
-<div class="cat">
-🐈‍⬛<span>👋</span>
-</div>
 
 <!-- LOADING -->
 <div id="loading">
