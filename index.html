@@ -20,21 +20,54 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* PAW BACKGROUND */
+/* ================= FULL PAW WALLPAPER ================= */
+
 body::before{
-content:"🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾";
+content:"🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾";
 position:fixed;
-width:100%;
-height:100%;
-font-size:80px;
-opacity:.08;
+top:0;
+left:0;
+width:200%;
+height:200%;
+font-size:90px;
+opacity:.07;
 pointer-events:none;
-animation:pawMove 40s linear infinite;
+animation:pawMove 60s linear infinite;
+line-height:120px;
+white-space:normal;
 }
 
 @keyframes pawMove{
-0%{transform:translateY(0);}
-100%{transform:translateY(-400px);}
+0%{transform:translate(0,0);}
+100%{transform:translate(-300px,-300px);}
+}
+
+/* ================= WAVING CAT ================= */
+
+.cat{
+position:fixed;
+left:10px;
+bottom:20px;
+font-size:90px;
+z-index:5;
+animation:catBounce 3s ease-in-out infinite;
+}
+
+.cat span{
+display:inline-block;
+transform-origin:bottom right;
+animation:wave 1s infinite;
+}
+
+@keyframes wave{
+0%{transform:rotate(0deg);}
+50%{transform:rotate(25deg);}
+100%{transform:rotate(0deg);}
+}
+
+@keyframes catBounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
 }
 
 /* ================= LOADING ================= */
@@ -90,7 +123,6 @@ margin-top:15px;
 font-weight:bold;
 }
 
-/* tulisan klik */
 .start-text{
 margin-top:15px;
 font-size:14px;
@@ -177,6 +209,11 @@ color:white;
 padding:15px;
 }
 
+/* MOBILE */
+@media(max-width:600px){
+.cat{font-size:70px;}
+}
+
 </style>
 
 <script>
@@ -199,13 +236,11 @@ localStorage.setItem("visited",true);
 }
 };
 
-/* START WEBSITE */
 function startSite(){
 document.getElementById("profile").style.display="none";
 showPage('home');
 }
 
-/* NAVIGATION */
 function showPage(id){
 document.querySelectorAll('.page').forEach(p=>{
 p.style.display="none";
@@ -219,13 +254,18 @@ document.getElementById(id).style.display="block";
 
 <body>
 
+<!-- 🐱 WAVING CAT -->
+<div class="cat">
+🐱<span>👋</span>
+</div>
+
 <!-- LOADING -->
 <div id="loading">
 <div class="loader"></div>
 <p>Loading...</p>
 </div>
 
-<!-- PROFILE SCREEN (FIXED) -->
+<!-- PROFILE -->
 <div id="profile">
 
 <img src="pas foto simari.jpg" class="profile-img">
