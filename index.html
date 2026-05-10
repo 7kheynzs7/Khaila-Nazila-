@@ -20,7 +20,7 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* ===== FULL SCREEN PAW BACKGROUND ===== */
+/* PAW BACKGROUND FULL */
 body::before{
 content:"🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾";
 position:fixed;
@@ -32,7 +32,6 @@ font-size:90px;
 opacity:.07;
 pointer-events:none;
 animation:pawMove 25s linear infinite;
-white-space:wrap;
 }
 
 @keyframes pawMove{
@@ -40,7 +39,7 @@ white-space:wrap;
 100%{transform:translateY(-600px);}
 }
 
-/* ================= LOADING ================= */
+/* LOADING */
 
 #loading{
 position:fixed;
@@ -67,7 +66,7 @@ animation:spin 1s linear infinite;
 100%{transform:rotate(360deg);}
 }
 
-/* ================= PROFILE ================= */
+/* PROFILE */
 
 #profile{
 display:none;
@@ -109,7 +108,7 @@ animation:blink 1.5s infinite;
 50%{opacity:.4;}
 }
 
-/* ================= NAVBAR ================= */
+/* NAVBAR */
 
 header{
 background:#c7a17a;
@@ -119,7 +118,7 @@ font-size:22px;
 box-shadow:0 3px 10px rgba(0,0,0,.2);
 }
 
-/* ================= PAGE ================= */
+/* PAGE */
 
 .page{
 display:none;
@@ -232,9 +231,7 @@ document.getElementById(id).style.display="block";
 Khaila Nazila Shofa
 </div>
 
-<div class="start-text" onclick="startSite()">
-klik
-</div>
+<div class="start-text" onclick="startSite()">klik</div>
 
 </div>
 
@@ -256,6 +253,8 @@ Website Mata Kuliah
 </div>
 
 <div class="card" onclick="showPage('tugas3')">📁 Tugas 3</div>
+
+<div class="card" onclick="showPage('tugas4')">📁 Tugas 4</div>
 
 </div>
 
@@ -311,6 +310,17 @@ onclick="window.open('https://forms.gle/5KttkeRjfg2irk8j8','_blank')">
 onclick="window.open('https://datastudio.google.com/s/lFeQWS64uEc','_blank')">
 📊 Sajian Data
 </div>
+
+<button onclick="showPage('home')">⬅ Kembali</button>
+
+</div>
+
+<!-- TUGAS 4 -->
+<div id="tugas4" class="page">
+
+<h2>Tugas 4 - Sajian Data</h2>
+
+<iframe src="https://datastudio.google.com/embed/reporting/1b1d06e3-3bc2-434e-acc0-0c073f58eab0/page/page_12345" allowfullscreen></iframe>
 
 <button onclick="showPage('home')">⬅ Kembali</button>
 
