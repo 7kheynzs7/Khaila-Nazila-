@@ -20,7 +20,7 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* PAW BACKGROUND FULL */
+/* PAW BACKGROUND */
 body::before{
 content:"🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾";
 position:fixed;
@@ -40,7 +40,6 @@ animation:pawMove 25s linear infinite;
 }
 
 /* LOADING */
-
 #loading{
 position:fixed;
 width:100%;
@@ -67,7 +66,6 @@ animation:spin 1s linear infinite;
 }
 
 /* PROFILE */
-
 #profile{
 display:none;
 height:100vh;
@@ -109,7 +107,6 @@ animation:blink 1.5s infinite;
 }
 
 /* NAVBAR */
-
 header{
 background:#c7a17a;
 color:white;
@@ -119,7 +116,6 @@ box-shadow:0 3px 10px rgba(0,0,0,.2);
 }
 
 /* PAGE */
-
 .page{
 display:none;
 padding:20px;
@@ -188,13 +184,11 @@ if(localStorage.getItem("visited")){
 document.getElementById("loading").style.display="none";
 document.getElementById("profile").style.display="flex";
 }else{
-
 setTimeout(()=>{
 document.getElementById("loading").style.display="none";
 document.getElementById("profile").style.display="flex";
 localStorage.setItem("visited",true);
 },1500);
-
 }
 };
 
@@ -224,20 +218,12 @@ document.getElementById(id).style.display="block";
 
 <!-- PROFILE -->
 <div id="profile">
-
 <img src="pas foto simari.jpg" class="profile-img">
-
-<div class="name">
-Khaila Nazila Shofa
-</div>
-
+<div class="name">Khaila Nazila Shofa</div>
 <div class="start-text" onclick="startSite()">klik</div>
-
 </div>
 
-<header>
-Website Mata Kuliah
-</header>
+<header>Website Mata Kuliah</header>
 
 <!-- HOME -->
 <div id="home" class="page">
@@ -258,7 +244,7 @@ Website Mata Kuliah
 
 </div>
 
-<!-- TUGAS 1 -->
+<!-- ================= TUGAS 1 ================= -->
 <div id="tugas1" class="page">
 
 <h2>Tugas 1</h2>
@@ -296,18 +282,16 @@ Website Mata Kuliah
 <button onclick="showPage('tugas1')">⬅ Kembali</button>
 </div>
 
-<!-- TUGAS 3 -->
+<!-- ================= TUGAS 3 ================= -->
 <div id="tugas3" class="page">
 
 <h2>Tugas 3</h2>
 
-<div class="card"
-onclick="window.open('https://forms.gle/5KttkeRjfg2irk8j8','_blank')">
+<div class="card" onclick="window.open('https://forms.gle/5KttkeRjfg2irk8j8','_blank')">
 📄 Google Formulir
 </div>
 
-<div class="card"
-onclick="window.open('https://datastudio.google.com/s/lFeQWS64uEc','_blank')">
+<div class="card" onclick="window.open('https://datastudio.google.com/s/lFeQWS64uEc','_blank')">
 📊 Sajian Data
 </div>
 
@@ -315,15 +299,42 @@ onclick="window.open('https://datastudio.google.com/s/lFeQWS64uEc','_blank')">
 
 </div>
 
-<!-- TUGAS 4 -->
+<!-- ================= TUGAS 4 ================= -->
 <div id="tugas4" class="page">
 
-<h2>Tugas 4 - Sajian Data</h2>
+<h2>Tugas 4</h2>
 
-<iframe src="https://datastudio.google.com/embed/reporting/1b1d06e3-3bc2-434e-acc0-0c073f58eab0/page/page_12345" allowfullscreen></iframe>
+<div class="card" onclick="window.open('https://forms.gle/Uqi2VDenNrqWpo259','_blank')">
+📄 Google Formulir
+</div>
+
+<div class="card" onclick="showPage('looker4')">
+📊 Looker Studio
+</div>
+
+<div class="card" onclick="showPage('analisis4')">
+📑 Hasil Analisis
+</div>
 
 <button onclick="showPage('home')">⬅ Kembali</button>
 
+</div>
+
+<div id="looker4" class="page">
+<h2>Looker Studio</h2>
+
+<iframe src="https://datastudio.google.com/embed/reporting/1b1d06e3-3bc2-434e-acc0-0c073f58eab0/page/page_12345"
+allowfullscreen></iframe>
+
+<button onclick="showPage('tugas4')">⬅ Kembali</button>
+</div>
+
+<div id="analisis4" class="page">
+<h2>Hasil Analisis</h2>
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTcjAPWS24xFeA1_pPp1kqb4ilcEyt_U8w75ztqQPbPcQ2L8FklCADqKOpjrJ5Psl-dUqDIj4ZPjW3G/pubhtml?gid=82444794&single=true&widget=true&headers=false"></iframe>
+
+<button onclick="showPage('tugas4')">⬅ Kembali</button>
 </div>
 
 <footer>
