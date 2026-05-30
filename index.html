@@ -1,1 +1,112 @@
-<!DOCTYPE html> <html> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width,initial-scale=1.0"> <title>Website Mata Kuliah</title> <style> /* ================= THEME ================= */ body{ margin:0; font-family:Segoe UI; background:#ece7df; color:#3b2f2f; text-align:center; overflow-x:hidden; } /* PAW BACKGROUND */ body::before{ content:"🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾"; position:fixed; top:0; left:0; width:100%; height:200%; font-size:90px; opacity:.07; pointer-events:none; animation:pawMove 25s linear infinite; } @keyframes pawMove{ 0%{transform:translateY(0);} 100%{transform:translateY(-600px);} } /* LOADING */ #loading{ position:fixed; width:100%; height:100%; background:#ece7df; display:flex; justify-content:center; align-items:center; flex-direction:column; z-index:999; } .loader{ width:60px; height:60px; border-radius:50%; border:6px solid #c7a17a; border-top:6px solid white; animation:spin 1s linear infinite; } @keyframes spin{ 100%{transform:rotate(360deg);} } /* PROFILE */ #profile{ display:none; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; } .profile-img{ width:150px; height:150px; border-radius:50%; object-fit:cover; border:6px solid #c7a17a; box-shadow:0 5px 20px rgba(0,0,0,.2); } .name{ font-size:26px; margin-top:15px; font-weight:bold; } .start-text{ margin-top:15px; font-size:14px; color:white; background:#c7a17a; padding:7px 20px; border-radius:20px; cursor:pointer; animation:blink 1.5s infinite; } @keyframes blink{ 0%,100%{opacity:1;} 50%{opacity:.4;} } /* NAVBAR */ header{ background:#c7a17a; color:white; padding:18px; font-size:22px; box-shadow:0 3px 10px rgba(0,0,0,.2); } /* PAGE */ .page{ display:none; padding:20px; animation:fade .5s ease; } @keyframes fade{ from{opacity:0;transform:translateY(10px);} to{opacity:1;} } .card{ background:#fffaf4; margin:15px auto; padding:20px; width:90%; max-width:320px; border-radius:15px; cursor:pointer; border:2px solid #c7a17a; transition:.3s; } .card:hover{ transform:scale(1.05); background:#f3e3d1; } button{ margin-top:20px; padding:10px 15px; border:none; background:#c7a17a; color:white; border-radius:10px; cursor:pointer; } img{ width:200px; border-radius:15px; margin:10px; } iframe{ width:100%; height:90vh; border:none; border-radius:12px; } footer{ margin-top:50px; background:#c7a17a; color:white; padding:15px; } </style> <script> window.onload=function(){ if(localStorage.getItem("visited")){ document.getElementById("loading").style.display="none"; document.getElementById("profile").style.display="flex"; }else{ setTimeout(()=>{ document.getElementById("loading").style.display="none"; document.getElementById("profile").style.display="flex"; localStorage.setItem("visited",true); },1500); } }; function startSite(){ document.getElementById("profile").style.display="none"; showPage('home'); } function showPage(id){ document.querySelectorAll('.page').forEach(p=>{ p.style.display="none"; }); document.getElementById(id).style.display="block"; } </script> </head> <body> <!-- LOADING --> <div id="loading"> <div class="loader"></div> <p>Loading...</p> </div> <!-- PROFILE --> <div id="profile"> <img src="pas foto simari.jpg" class="profile-img"> <div class="name">Khaila Nazila Shofa</div> <div class="start-text" onclick="startSite()">klik</div> </div> <header>Website Mata Kuliah</header> <!-- HOME --> <div id="home" class="page"> <h2>Menu Tugas</h2> <div class="card" onclick="showPage('tugas1')">📁 Tugas 1</div> <div class="card"> <a href="Tugas 2.html" style="text-decoration:none;color:#3b2f2f;"> 📁 Tugas 2 </a> </div> <div class="card" onclick="showPage('tugas3')">📁 Tugas 3</div> <div class="card" onclick="showPage('tugas4')">📁 Tugas 4</div> </div> <!-- ================= TUGAS 1 ================= --> <div id="tugas1" class="page"> <h2>Tugas 1</h2> <div class="card" onclick="showPage('biodata')">👤 Biodata</div> <div class="card" onclick="showPage('foto')">🖼️ Galeri Foto</div> <div class="card" onclick="showPage('video')">🎥 Galeri Video</div> <button onclick="showPage('home')">⬅ Kembali</button> </div> <div id="biodata" class="page"> <h2>Biodata</h2> <p>Nama : Khaila Nazila Shofa</p> <p>NIM : 2310715220012</p> <p>Program Studi : Sosial Ekonomi Perikanan</p> <p>Universitas : Lambung Mangkurat</p> <p>Hobi : Masak bila mood sedang baik & Travelling jikalau isi dompet mendukung</p> <button onclick="showPage('tugas1')">⬅ Kembali</button> </div> <div id="foto" class="page"> <h2>Galeri Foto</h2> <img src="rumah tampak samping kiri.jpg"> <img src="rumah tampak depan.jpg"> <img src="rumah tampak samping kanan.jpg"> <img src="GMaps.jpeg"> <button onclick="showPage('tugas1')">⬅ Kembali</button> </div> <div id="video" class="page"> <h2>Galeri Video</h2> <iframe src="video fix.mp4"></iframe> <button onclick="showPage('tugas1')">⬅ Kembali</button> </div> <!-- ================= TUGAS 3 ================= --> <div id="tugas3" class="page"> <h2>Tugas 3</h2> <div class="card" onclick="window.open('https://forms.gle/5KttkeRjfg2irk8j8','_blank')"> 📄 Google Formulir </div> <div class="card" onclick="window.open('https://datastudio.google.com/s/lFeQWS64uEc','_blank')"> 📊 Sajian Data </div> <button onclick="showPage('home')">⬅ Kembali</button> </div> <!-- ================= TUGAS 4 ================= --> <div id="tugas4" class="page"> <h2>Tugas 4</h2> <div class="card" onclick="window.open('https://forms.gle/Uqi2VDenNrqWpo259','_blank')"> 📄 Google Formulir </div> <div class="card" onclick="showPage('looker4')"> 📊 Looker Studio </div> <div class="card" onclick="showPage('analisis4')"> 📑 Hasil Analisis </div> <button onclick="showPage('home')">⬅ Kembali</button> </div> <div id="looker4" class="page"> <h2>Looker Studio</h2> <iframe src="https://datastudio.google.com/embed/reporting/1b1d06e3-3bc2-434e-acc0-0c073f58eab0/page/page_12345" allowfullscreen></iframe> <button onclick="showPage('tugas4')">⬅ Kembali</button> </div> <div id="analisis4" class="page"> <h2>Hasil Analisis</h2> <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTcjAPWS24xFeA1_pPp1kqb4ilcEyt_U8w75ztqQPbPcQ2L8FklCADqKOpjrJ5Psl-dUqDIj4ZPjW3G/pubhtml?gid=82444794&single=true&widget=true&headers=false"></iframe> <button onclick="showPage('tugas4')">⬅ Kembali</button> </div> <footer> © 2026 Khaila Nazila </footer> </body> </html>
+<!DOCTYPE html> <html> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width,initial-scale=1.0"> <title>Website Mata Kuliah</title> <style> /* ================= THEME ================= */ body{ margin:0; font-family:Segoe UI; background:#ece7df; color:#3b2f2f; text-align:center; overflow-x:hidden; } /* PAW BACKGROUND */ body::before{ content:"🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾"; position:fixed; top:0; left:0; width:100%; height:200%; font-size:90px; opacity:.07; pointer-events:none; animation:pawMove 25s linear infinite; } @keyframes pawMove{ 0%{transform:translateY(0);} 100%{transform:translateY(-600px);} } /* LOADING */ #loading{ position:fixed; width:100%; height:100%; background:#ece7df; display:flex; justify-content:center; align-items:center; flex-direction:column; z-index:999; } .loader{ width:60px; height:60px; border-radius:50%; border:6px solid #c7a17a; border-top:6px solid white; animation:spin 1s linear infinite; } @keyframes spin{ 100%{transform:rotate(360deg);} } /* PROFILE */ #profile{ display:none; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; } .profile-img{ width:150px; height:150px; border-radius:50%; object-fit:cover; border:6px solid #c7a17a; box-shadow:0 5px 20px rgba(0,0,0,.2); } .name{ font-size:26px; margin-top:15px; font-weight:bold; } .start-text{ margin-top:15px; font-size:14px; color:white; background:#c7a17a; padding:7px 20px; border-radius:20px; cursor:pointer; animation:blink 1.5s infinite; } @keyframes blink{ 0%,100%{opacity:1;} 50%{opacity:.4;} } /* NAVBAR */ header{ background:#c7a17a; color:white; padding:18px; font-size:22px; box-shadow:0 3px 10px rgba(0,0,0,.2); } /* PAGE */ .page{ display:none; padding:20px; animation:fade .5s ease; } @keyframes fade{ from{opacity:0;transform:translateY(10px);} to{opacity:1;} } .card{ background:#fffaf4; margin:15px auto; padding:20px; width:90%; max-width:320px; border-radius:15px; cursor:pointer; border:2px solid #c7a17a; transition:.3s; } .card:hover{ transform:scale(1.05); background:#f3e3d1; } button{ margin-top:20px; padding:10px 15px; border:none; background:#c7a17a; color:white; border-radius:10px; cursor:pointer; } img{ width:200px; border-radius:15px; margin:10px; } iframe{ width:100%; height:90vh; border:none; border-radius:12px; } footer{ margin-top:50px; background:#c7a17a; color:white; padding:15px; } </style> <script> window.onload=function(){ if(localStorage.getItem("visited")){ document.getElementById("loading").style.display="none"; document.getElementById("profile").style.display="flex"; }else{ setTimeout(()=>{ document.getElementById("loading").style.display="none"; document.getElementById("profile").style.display="flex"; localStorage.setItem("visited",true); },1500); } }; function startSite(){ document.getElementById("profile").style.display="none"; showPage('home'); } function showPage(id){ document.querySelectorAll('.page').forEach(p=>{ p.style.display="none"; }); document.getElementById(id).style.display="block"; } </script> </head> <body> <!-- LOADING --> <div id="loading"> <div class="loader"></div> <p>Loading...</p> </div> <!-- PROFILE --> <div id="profile"> <img src="pas foto simari.jpg" class="profile-img"> <div class="name">Khaila Nazila Shofa</div> <div class="start-text" onclick="startSite()">klik</div> </div> <header>Website Mata Kuliah</header> <!-- HOME --> <div id="home" class="page"> <h2>Menu Tugas</h2> <div class="card" onclick="showPage('tugas1')">📁 Tugas 1</div> <div class="card"> <a href="Tugas 2.html" style="text-decoration:none;color:#3b2f2f;"> 📁 Tugas 2 </a> </div> <div class="card" onclick="showPage('tugas3')">📁 Tugas 3</div> <div class="card" onclick="showPage('tugas4')">📁 Tugas 4</div> </div> <!-- ================= TUGAS 1 ================= --> <div id="tugas1" class="page"> <h2>Tugas 1</h2> <div class="card" onclick="showPage('biodata')">👤 Biodata</div> <div class="card" onclick="showPage('foto')">🖼️ Galeri Foto</div> <div class="card" onclick="showPage('video')">🎥 Galeri Video</div> <button onclick="showPage('home')">⬅ Kembali</button> </div> <div id="biodata" class="page"> <h2>Biodata</h2> <p>Nama : Khaila Nazila Shofa</p> <p>NIM : 2310715220012</p> <p>Program Studi : Sosial Ekonomi Perikanan</p> <p>Universitas : Lambung Mangkurat</p> <p>Hobi : Masak bila mood sedang baik & Travelling jikalau isi dompet mendukung</p> <button onclick="showPage('tugas1')">⬅ Kembali</button> </div> <div id="foto" class="page"> <h2>Galeri Foto</h2> <img src="rumah tampak samping kiri.jpg"> <img src="rumah tampak depan.jpg"> <img src="rumah tampak samping kanan.jpg"> <img src="GMaps.jpeg"> <button onclick="showPage('tugas1')">⬅ Kembali</button> </div> <div id="video" class="page"> <h2>Galeri Video</h2> <iframe src="video fix.mp4"></iframe> <button onclick="showPage('tugas1')">⬅ Kembali</button> </div> <!-- ================= TUGAS 3 ================= --> <div id="tugas3" class="page"> <h2>Tugas 3</h2> <div class="card" onclick="window.open('https://forms.gle/5KttkeRjfg2irk8j8','_blank')"> 📄 Google Formulir </div> <div class="card" onclick="window.open('https://datastudio.google.com/s/lFeQWS64uEc','_blank')"> 📊 Sajian Data </div> <button onclick="showPage('home')">⬅ Kembali</button> </div> <!-- ================= TUGAS 4 ================= --> <div id="tugas4" class="page"> <h2>Tugas 4</h2> <div class="card" onclick="window.open('https://forms.gle/Uqi2VDenNrqWpo259','_blank')"> 📄 Google Formulir </div> <div class="card" onclick="showPage('looker4')"> 📊 Looker Studio </div> <div class="card" onclick="showPage('analisis4')"> 📑 Hasil Analisis </div> <button onclick="showPage('home')">⬅ Kembali</button> </div> <div id="looker4" class="page"> <h2>Looker Studio</h2> <iframe src="https://datastudio.google.com/embed/reporting/1b1d06e3-3bc2-434e-acc0-0c073f58eab0/page/page_12345" allowfullscreen></iframe> <button onclick="showPage('tugas4')">⬅ Kembali</button> </div> <div id="analisis4" class="page"> <h2>Hasil Analisis</h2> <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTcjAPWS24xFeA1_pPp1kqb4ilcEyt_U8w75ztqQPbPcQ2L8FklCADqKOpjrJ5Psl-dUqDIj4ZPjW3G/pubhtml?gid=82444794&single=true&widget=true&headers=false"></iframe> <button onclick="showPage('tugas4')">⬅ Kembali</button> </div><div class="card" onclick="showPage('tugasakhir')">
+📁 Tugas Akhir
+</div><!-- ================= TUGAS AKHIR ================= -->
+<div id="tugasakhir" class="page">
+
+<h2>Tugas Akhir</h2>
+
+<div class="card" onclick="showPage('sejarahkelompok')">
+📂 Sejarah Kelompok
+</div>
+
+<div class="card" onclick="showPage('datadasarkelompok')">
+📂 Data Dasar Kelompok
+</div>
+
+<div class="card" onclick="showPage('dataanggotakelompok')">
+📂 Data Anggota Kelompok
+</div>
+
+<div class="card" onclick="showPage('datakomoditas')">
+📂 Data Komoditas Perikanan
+</div>
+
+<button onclick="showPage('home')">⬅ Kembali</button>
+
+</div>
+
+<!-- ================= SEJARAH KELOMPOK ================= -->
+<div id="sejarahkelompok" class="page">
+
+<h2>Kelompok 3 POKLAHSAR</h2>
+
+<div style="
+max-width:900px;
+margin:auto;
+text-align:justify;
+background:#fffaf4;
+padding:25px;
+border-radius:15px;
+border:2px solid #c7a17a;
+line-height:1.8;
+">
+
+<p>
+Kelompok pengolah dan pemasar (POKLAHSAR) BUNGA MERAH adalah wadah pengolah dan pemasaran terasi udang yang berada di Desa Klampis Timur, Kecamatan Klampis Kabupaten Bangkalan yang di bentuk agar pengolah dan pemasar khusunya anggota kelompok dapat hidup sejahtera dan jauh dari kemiskinan. Potensi perikanan di Kecamatan Klampis sangat melimpah untuk dimanfaatkan dengan sebaik baiknya sebagai hasil olahan tentunya membutuhkan sebuah penanganan yang serius oleh pengolah itu sendiri dan juga harus didukung dan dibantu oleh semua pihak terutama pemerintah agar potensi yang sangat besar ini dapat bermanfaat bagi masyarakat.
+</p>
+
+<p>
+Kelompok pengolah dan pemasar (POKLAHSAR) Ikan SRIKANDI adalah nama kelompok usaha pengolahan dan pemasaran yang bergerak di bidang pengolahan belut. Terbentuknya Pokhlahsar SRIKANDI ini merupakan kelompok Pohklahsar pertama di desa Puuhopa kecamatan Puriala. Ketersedian Belut di areal untuk kegiatan usaha di bidang Pokhlasar terutama belut. Sebagian besar masyarakatnya merupakan warga eks transmigrasi yang berasal dari Jawa Barat. Kegiatan Pokhlahsar ini masih dilakukan secara individual dan teknologinya masih tradisional maka keberadaan poklhasar ini mengalami pasang surut dan masih sebatas usaha untuk memenuhi kebutuhan sehari hari.
+</p>
+
+<p>
+Kelompok pengolah dan pemasar (POKLAHSAR) SUMBER REJEKI merupakan wadah yang dibentuk untuk mengoptimalkan potensi sumber daya perikanan di Desa Ngelo, Kecamatan Margumulyo, Kabupaten Bojonegoro. Desa ini dikenal dengan kekayaan alamnya yang meliputi berbagai jenis ikan dan sumber daya perairan sepanjang daerah aliran Sungai Bengawan Solo yang mendukung masyarakat setempat untuk mengembangkan, mengolah, dan memasarkan hasil perikanan mereka.
+</p>
+
+<p>
+Poklahsar WAROH adalah kelompok pengolah dan pemasar hasil perikanan di Desa Kediri Selatan. Beranggotakan ibu ibu yang ada di daerah tersebut dan didukung oleh tokoh masyarakat, perkumpulan ibu ibu ini ingin melakukan kegiatan yang bermanfaat dan bisa meningkatkan pendapatan dengan memanfaatkan keterampilan mengolah yang dimiliki. Tiap anggota kelompok berkumpul di satu tempat yaitu rumah ketua kelompok untuk memproduksi hasil olahan perikanan berupa abon ikan dan abon ikan asin. Poklahsar WAROH bermaksud menghimpun seluruh potensi yang memiliki persamaan cita cita, visi dan misi dalam upaya meningkatkan kesejahteraan khususnya kompetensi dalam olahan hasil perikanan. Poklahsar WAROH berfungsi sebagai wadah bagi setiap pelaku utama perikanan dalam meningkatkan keterampilan, ilmu pengetahuan dan teknologi melalui pelatihan pengolahan hasil perikanan.
+</p>
+
+</div>
+
+<div style="
+margin-top:20px;
+font-weight:bold;
+font-size:18px;
+color:#8b5e3c;
+">
+Kelompok 3 POKLAHSAR SIMP
+</div>
+
+<button onclick="showPage('tugasakhir')">⬅ Kembali</button>
+
+</div>
+
+<!-- ================= DATA DASAR KELOMPOK ================= -->
+<div id="datadasarkelompok" class="page">
+
+<h2>Data Dasar Kelompok</h2>
+
+<p>
+Silakan tambahkan Data Dasar Kelompok di sini.
+</p>
+
+<button onclick="showPage('tugasakhir')">⬅ Kembali</button>
+
+</div>
+
+<!-- ================= DATA ANGGOTA KELOMPOK ================= -->
+<div id="dataanggotakelompok" class="page">
+
+<h2>Data Anggota Kelompok</h2>
+
+<p>
+Silakan tambahkan Data Anggota Kelompok di sini.
+</p>
+
+<button onclick="showPage('tugasakhir')">⬅ Kembali</button>
+
+</div>
+
+<!-- ================= DATA KOMODITAS PERIKANAN ================= -->
+<div id="datakomoditas" class="page">
+
+<h2>Data Komoditas Perikanan</h2>
+
+<p>
+Silakan tambahkan Data Komoditas Perikanan di sini.
+</p>
+
+<button onclick="showPage('tugasakhir')">⬅ Kembali</button>
+
+</div> <footer> © 2026 Khaila Nazila </footer> </body> </html>
