@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produksi Kelompok dan Pola Produksi POKLAHSAR</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:#ece7df;
+    color:#3b2f2f;
+    text-align:center;
+}
+
+header{
+    background:#c7a17a;
+    color:white;
+    padding:20px;
+    font-size:26px;
+    font-weight:bold;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:30px 20px;
+}
+
+.card{
+    background:#fffaf4;
+    border:2px solid #c7a17a;
+    border-radius:15px;
+    padding:20px;
+    margin:15px auto;
+    cursor:pointer;
+    transition:.3s;
+    font-size:18px;
+    font-weight:500;
+}
+
+.card:hover{
+    background:#f3e3d1;
+    transform:translateY(-5px);
+}
+
+.card a{
+    text-decoration:none;
+    color:#3b2f2f;
+    display:block;
+}
+
+.section-title{
+    margin-bottom:25px;
+    color:#8b5e3c;
+}
+
+footer{
+    margin-top:40px;
+    background:#c7a17a;
+    color:white;
+    padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+📊 Produksi Kelompok dan Pola Produksi POKLAHSAR
+</header>
+
+<div class="container">
+
+<h2 class="section-title">
+Menu Data dan Analisis
+</h2>
+
+<div class="card">
+<a href="LINK_FORM_PENDAFTARAN" target="_blank">
+📝 Google Form Pendaftaran Keanggotaan POKLAHSAR
+</a>
+</div>
+
+<div class="card">
+<a href="LINK_SPREADSHEET_PENDAFTARAN" target="_blank">
+📄 Spreadsheet Pendaftaran
+</a>
+</div>
+
+<div class="card">
+<a href="LINK_LOOKER_PENDAFTARAN" target="_blank">
+📈 Looker Studio Hasil Spreadsheet Pendaftaran
+</a>
+</div>
+
+<div class="card">
+<a href="LINK_FORM_KEPUASAN" target="_blank">
+⭐ Google Form Tingkat Kepuasan terhadap Fitur Produksi Kelompok dan Pola Produksi POKLAHSAR
+</a>
+</div>
+
+<div class="card">
+<a href="LINK_SPREADSHEET_KEPUASAN" target="_blank">
+📄 Spreadsheet Tingkat Kepuasan
+</a>
+</div>
+
+<div class="card">
+<a href="LINK_LOOKER_KEPUASAN" target="_blank">
+📊 Looker Studio Hasil Spreadsheet Tingkat Kepuasan
+</a>
+</div>
+
+<div class="card">
+<a href="LINK_HASIL_ANALISIS" target="_blank">
+📑 Hasil Analisis Keseluruhan
+</a>
+</div>
+
+</div>
+
+<footer>
+© 2026 Khaila Nazila Shofa
+</footer>
+
+</body>
+</html>
