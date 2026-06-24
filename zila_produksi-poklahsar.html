@@ -8,6 +8,45 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    /* PREVIEW DASHBOARD BESAR */
+
+.preview-link{
+text-decoration:none;
+color:inherit;
+display:block;
+grid-column:1 / -1;
+}
+
+.preview-box{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.preview-box:hover{
+transform:scale(1.01);
+}
+
+.preview-box h3{
+color:#2952cc;
+margin-bottom:10px;
+}
+
+.preview-box p{
+color:#666;
+margin-bottom:15px;
+}
+
+.preview-box iframe{
+width:100%;
+height:850px;
+border:none;
+border-radius:10px;
+pointer-events:none;
+}
+
 <style>
 
 *{
@@ -175,51 +214,30 @@ footer{
 
           <!-- DASHBOARD PENDATAAN PRODUKSI KELOMPOK dan POLA PRODUKSI -->
 
-/* DASHBOARD */
-.dashboard-card{
-    background:white;
-    border-radius:15px;
-    padding:25px;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
-    margin-top:20px;
-    grid-column:1/-1; /* memenuhi lebar grid */
-}
+<a href="https://datastudio.google.com/embed/reporting/1969eea2-1d54-43ca-b238-3fa19d1fb5b6/page/page_12345"
+target="_blank"
+class="preview-link">
 
-.dashboard-card h2{
-    color:#2952cc;
-    margin-bottom:10px;
-}
+```
+<div class="preview-box">
 
-.dashboard-card p{
-    color:#666;
-    margin-bottom:15px;
-}
-
-/* Ukuran dashboard besar */
-.dashboard-container{
-    width:100%;
-    height:900px; 
-    border:none;
-    border-radius:10px;
-}
-        <div class="dashboard-card">
-
-    <h2>
-        <i class="fas fa-chart-pie"></i>
+    <h3>
+        <i class="fas fa-chart-line"></i>
         Dashboard Pendataan Produksi dan Pola Produksi
-    </h2>
+    </h3>
 
     <p>
         Visualisasi Data Produksi Kelompok dan Pola Produksi melalui Looker Studio
     </p>
 
     <iframe
-        class="dashboard-container"
-        src="https://datastudio.google.com/embed/reporting/1969eea2-1d54-43ca-b238-3fa19d1fb5b6/page/page_12345"
-        allowfullscreen>
+        src="https://datastudio.google.com/embed/reporting/1969eea2-1d54-43ca-b238-3fa19d1fb5b6/page/page_12345">
     </iframe>
 
 </div>
+```
+
+</a>
 
         <div class="card">
             <a href="https://forms.gle/kaVVy3EbeY136JFL8" target="_blank">
@@ -239,51 +257,30 @@ footer{
 
         <!-- DASHBOARD KEPUASAN -->
 
-/* DASHBOARD */
-.dashboard-card{
-    background:white;
-    border-radius:15px;
-    padding:25px;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
-    margin-top:20px;
-    grid-column:1/-1; /* memenuhi lebar grid */
-}
+<a href="https://datastudio.google.com/embed/reporting/98467286-ecd8-4b04-a8c3-639013e1b703/page/page_12345"
+target="_blank"
+class="preview-link">
 
-.dashboard-card h2{
-    color:#2952cc;
-    margin-bottom:10px;
-}
+```
+<div class="preview-box">
 
-.dashboard-card p{
-    color:#666;
-    margin-bottom:15px;
-}
-
-/* Ukuran dashboard besar */
-.dashboard-container{
-    width:100%;
-    height:900px; 
-    border:none;
-    border-radius:10px;
-}
-        <div class="dashboard-card">
-
-    <h2>
+    <h3>
         <i class="fas fa-chart-pie"></i>
         Dashboard Kepuasan Pengguna Fitur
-    </h2>
+    </h3>
 
     <p>
         Visualisasi hasil survei kepuasan pengguna fitur Produksi Kelompok dan Pola Produksi melalui Looker Studio
     </p>
 
     <iframe
-        class="dashboard-container"
-        src="https://datastudio.google.com/embed/reporting/98467286-ecd8-4b04-a8c3-639013e1b703/page/page_12345"
-        allowfullscreen>
+        src="https://datastudio.google.com/embed/reporting/98467286-ecd8-4b04-a8c3-639013e1b703/page/page_12345">
     </iframe>
 
 </div>
+```
+
+</a>
 
         <div class="card">
             <a href="https://docs.google.com/spreadsheets/d/1pG_xrXT7G173-WGYoHxZETTmldTI07H7/edit?usp=sharing&ouid=106290971886669413802&rtpof=true&sd=true" target="_blank">
